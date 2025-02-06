@@ -1,6 +1,8 @@
 import Banner from "@/components/Banner";
 import CardSlider from "@/components/CardSlider";
-import Category from "@/components/Category";
+import Categorys from "@/components/Categorys";
+import Category from "@/components/CategoryText";
+import CoustomBtn from "@/components/CoustomBtn";
 import Navbar from "@/components/Navbar";
 import OfferCard from "@/components/OfferCard";
 import OfferCountdownTimer from "@/components/OfferCountdownTimer";
@@ -28,6 +30,16 @@ export default function Home() {
           <Category categoryText={"Today's"} />
           <OfferCountdownTimer />
           <CardSlider />
+          <CoustomBtn />
+        </div>
+
+        {/* divider */}
+        <div className="divider mt-10"></div>
+
+        {/* categorys */}
+        <div className="mt-20">
+          <Category categoryText={"categorys"} />
+          <Categorys />
         </div>
       </div>
 

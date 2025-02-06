@@ -6,7 +6,6 @@ import SearchBar from "./SearchBar";
 import { AiOutlineLike } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 
-// ✅ ফন্টকে module scope-এ const হিসেবে ডিফাইন করো
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
   subsets: ["latin"],
