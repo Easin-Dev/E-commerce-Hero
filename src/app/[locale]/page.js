@@ -39,6 +39,7 @@ export default function Home() {
         {/* categorys */}
         <div className="mt-20">
           <Category categoryText={"categorys"} />
+          <OfferCountdownTimer />
           <Categorys />
         </div>
       </div>

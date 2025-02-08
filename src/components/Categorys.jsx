@@ -6,12 +6,12 @@ import { Ubuntu } from "next/font/google";
 import { Navigation } from "swiper/modules";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { AiOutlineLike } from "react-icons/ai";
-import { CiShoppingTag } from "react-icons/ci";
-import { HiOutlineEye } from "react-icons/hi";
-import { MdAddShoppingCart } from "react-icons/md";
-import { HiOutlineShoppingBag } from "react-icons/hi";
-import { FiPhone } from "react-icons/fi";
+import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
+import { RiComputerLine } from "react-icons/ri";
+import { BsSmartwatch } from "react-icons/bs";
+import { BsFillCameraFill } from "react-icons/bs";
+import { FaHeadphonesSimple } from "react-icons/fa6";
+import { GrGamepad } from "react-icons/gr";
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -27,27 +27,41 @@ const Categorys = () => {
   const products = [
     {
       id: 1,
-      title: "HAVIT HV-G92 Gamepad",
-      price: "$120",
-      image: "/gamepad.jpg",
+      icon: <HiOutlineDevicePhoneMobile size={40} />,
+      title: "phones",
     },
     {
       id: 2,
-      title: "AK-900 Wired Keyboard",
-      price: "$960",
-      image: "/keyboard.jpg",
+      icon: <RiComputerLine size={40} />,
+      title: "computers",
     },
     {
       id: 3,
-      title: "IPS LCD Gaming Monitor",
-      price: "$370",
-      image: "/monitor.jpg",
+      icon: <BsSmartwatch size={40} />,
+      title: "smartWatch",
     },
     {
       id: 4,
-      title: "S-Series Comfort Chair",
-      price: "$375",
-      image: "/chair.jpg",
+      icon: <BsFillCameraFill size={40} />,
+      title: "cameras",
+    },
+    {
+      id: 5,
+      icon: <FaHeadphonesSimple size={40} />,
+      title: "Headphones",
+    },
+    {
+      id: 6,
+      icon: <GrGamepad size={40} />,
+      title: "Gaming",
+    },
+    {
+      id: 7,
+      icon: "S-Series Comfort Chair",
+    },
+    {
+      id: 8,
+      icon: "S-Series Comfort Chair",
     },
   ];
 
@@ -61,7 +75,7 @@ const Categorys = () => {
   }, [swiperInstance]);
 
   return (
-    <div className="relative mt-5">
+    <div className={`relative mt-5 ${ubuntu.className}`}>
       {/* Custom Navigation Buttons */}
       <button
         ref={prevRef}
@@ -80,7 +94,7 @@ const Categorys = () => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={10}
-        slidesPerView={3}
+        slidesPerView={6}
         onSwiper={(swiper) => setSwiperInstance(swiper)}
       >
         {products.map((product) => (
@@ -88,9 +102,10 @@ const Categorys = () => {
             key={product.id}
             className="p-4 bg-white rounded-lg shadow-md"
           >
-            <div>
-              <div>
-                <FiPhone />
+            <div className="border btn w-40 btn-outline hover:bg-red-500 border-gray-300  hover:border-red-500 h-40 mx-auto flex justify-center items-center rounded-md">
+              <div className="">
+                <button>{product.icon}</button>
+                <h1>{product.title}</h1>
               </div>
             </div>
           </SwiperSlide>
