@@ -7,6 +7,7 @@ import GadgetCard from "@/components/GadgetCard";
 import Navbar from "@/components/Navbar";
 import OfferCard from "@/components/OfferCard";
 import OfferCountdownTimer from "@/components/OfferCountdownTimer";
+import OurProducts from "@/components/OurProducts";
 import { Ubuntu } from "next/font/google";
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -63,6 +64,14 @@ export default function Home() {
 
         {/* Gadget card */}
         <GadgetCard />
+
+        {/* our products */}
+        <Category categoryText={"our products"} />
+        <h1 className="text-5xl font-bold text-black mt-2">
+          Explore Our products
+        </h1>
+        <OurProducts />
+        <CoustomBtn />
       </div>
 
       {/* footers */}

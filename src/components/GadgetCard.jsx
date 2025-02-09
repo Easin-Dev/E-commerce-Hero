@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function GadgetCard() {
   return (
-    <div className="flex items-center justify-center  mt-14">
+    <div className="flex items-center justify-center  my-20">
       <div className="relative flex flex-col md:flex-row bg-gradient-to-r from-gray-900 to-black p-8 rounded-3xl shadow-2xl w-[90%] max-w-7xl">
         {/* Left Content */}
         <div className="flex flex-col justify-center w-full md:w-1/2 text-white space-y-4">
