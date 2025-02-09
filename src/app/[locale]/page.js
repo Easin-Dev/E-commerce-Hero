@@ -3,6 +3,7 @@ import CardSlider from "@/components/CardSlider";
 import Categorys from "@/components/Categorys";
 import Category from "@/components/CategoryText";
 import CoustomBtn from "@/components/CoustomBtn";
+import Featured from "@/components/Featured";
 import GadgetCard from "@/components/GadgetCard";
 import Navbar from "@/components/Navbar";
 import OfferCard from "@/components/OfferCard";
@@ -76,6 +77,7 @@ export default function Home() {
         {/* New Arrival */}
         <Category categoryText={"Featured"} />
         <h1 className="text-5xl font-bold text-black mt-2">New Arrival</h1>
+        <Featured />
       </div>
 
       {/* footers */}
