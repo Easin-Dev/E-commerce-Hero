@@ -72,6 +72,10 @@ export default function Home() {
         </h1>
         <OurProducts />
         <CoustomBtn />
+
+        {/* New Arrival */}
+        <Category categoryText={"Featured"} />
+        <h1 className="text-5xl font-bold text-black mt-2">New Arrival</h1>
       </div>
 
       {/* footers */}
