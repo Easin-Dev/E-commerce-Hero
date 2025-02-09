@@ -4,6 +4,7 @@ import Categorys from "@/components/Categorys";
 import Category from "@/components/CategoryText";
 import CoustomBtn from "@/components/CoustomBtn";
 import Featured from "@/components/Featured";
+import Footer from "@/components/Footer";
 import GadgetCard from "@/components/GadgetCard";
 import Navbar from "@/components/Navbar";
 import OfferCard from "@/components/OfferCard";
@@ -86,7 +87,7 @@ export default function Home() {
 
       {/* footers */}
       <div>
-        <h1>this is footer</h1>
+        <Footer />
       </div>
     </div>
   );
