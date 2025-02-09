@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import OfferCard from "@/components/OfferCard";
 import OfferCountdownTimer from "@/components/OfferCountdownTimer";
 import OurProducts from "@/components/OurProducts";
+import Services from "@/components/Services";
 import { Ubuntu } from "next/font/google";
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -78,6 +79,9 @@ export default function Home() {
         <Category categoryText={"Featured"} />
         <h1 className="text-5xl font-bold text-black mt-2">New Arrival</h1>
         <Featured />
+
+        {/* services sections */}
+        <Services />
       </div>
 
       {/* footers */}
