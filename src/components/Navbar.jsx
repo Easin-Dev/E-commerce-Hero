@@ -4,10 +4,14 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import { AiOutlineLike } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname(); // ✅ এটি বর্তমান পেজের URL রিটার্ন করবে
+  const locale = pathname.split("/")[1] || "en";
+  console.log(locale);
   const nav = [
-    { path: "/home", name: "Home" },
+    { path: "/", name: "Home" },
     { path: "/contact", name: "Contact" },
     { path: "/about", name: "About" },
     { path: "/signUp", name: "Sign Up" },
@@ -20,7 +24,7 @@ export default function Navbar() {
       <div className="flex gap-24">
         {nav?.map((item) => (
           <div key={item.name} className="hover:border-b-2 border-black">
-            <Link href={item.path}>{item.name}</Link>
+            <Link href={`/${locale}/${item.path}`}>{item.name}</Link>
           </div>
         ))}
       </div>

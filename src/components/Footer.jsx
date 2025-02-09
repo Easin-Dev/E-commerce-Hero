@@ -1,23 +1,25 @@
 "use client";
 
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-10">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Exclusive Section */}
         <div>
           <h3 className="font-bold text-lg">Exclusive</h3>
           <p className="mt-2">Subscribe</p>
           <p className="text-gray-400 text-sm">Get 10% off your first order</p>
-          <div className="mt-4 flex border border-white p-2 rounded-lg">
+          <div className="mt-4 flex   p-2 rounded-lg">
             <input
               type="email"
               placeholder="Enter your email"
-              className="bg-transparent text-white outline-none flex-grow placeholder-gray-400"
+              className="bg-transparent input input-bordered border-white input-md w-full max-w-xs  placeholder-white"
             />
-            <button className="text-white">&gt;</button>
+            <button className="btn btn-error">
+              <Send />
+            </button>
           </div>
         </div>
 

@@ -4,6 +4,9 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import OfferCard from "@/components/OfferCard";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +40,16 @@ export default async function RootLayout({ children, params }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <div>
+            <div>
+              <OfferCard />
+              <Navbar />
+            </div>
+            <div>{children}</div>
+            <div>
+              <Footer />
+            </div>
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -21,15 +21,6 @@ const ubuntu = Ubuntu({
 export default function Home() {
   return (
     <div className={`${ubuntu.className}`}>
-      {/* offer card */}
-      <div>
-        <OfferCard />
-      </div>
-      {/* nabvar */}
-      <div>
-        <Navbar />
-      </div>
-
       {/* banner */}
       <div className="max-w-[1400px]  mx-auto">
         <Banner />
@@ -83,11 +74,6 @@ export default function Home() {
 
         {/* services sections */}
         <Services />
-      </div>
-
-      {/* footers */}
-      <div>
-        <Footer />
       </div>
     </div>
   );
