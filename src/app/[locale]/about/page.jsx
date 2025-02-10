@@ -8,8 +8,50 @@ import {
   ShoppingBag,
   Smile,
   Store,
+  Phone,
+  Mail,
 } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import Breadcrumb from "@/components/Breadcrumb";
+
+const teamMembers = [
+  {
+    name: "Tom Cruise",
+    role: "Managing Director",
+    image: "https://i.ibb.co.com/sdYCBq3y/138374475.jpg",
+    phone: "+123456789",
+    email: "tom@example.com",
+  },
+  {
+    name: "Emma Watson",
+    role: "Marketing Head",
+    image: "https://i.ibb.co.com/sdYCBq3y/138374475.jpg",
+    phone: "+987654321",
+    email: "emma@example.com",
+  },
+  {
+    name: "Will Smith",
+    role: "Sales Manager",
+    image: "https://i.ibb.co.com/sdYCBq3y/138374475.jpg",
+    phone: "+1122334455",
+    email: "will@example.com",
+  },
+  {
+    name: "Robert Downey Jr.",
+    role: "Product Designer",
+    image: "https://i.ibb.co.com/sdYCBq3y/138374475.jpg",
+    phone: "+5566778899",
+    email: "robert@example.com",
+  },
+  {
+    name: "Scarlett Johansson",
+    role: "Customer Support Head",
+    image: "https://i.ibb.co.com/sdYCBq3y/138374475.jpg",
+    phone: "+9988776655",
+    email: "scarlett@example.com",
+  },
+];
 
 const AboutPage = () => {
   return (
@@ -63,38 +105,51 @@ const AboutPage = () => {
             <Smile size={32} className="text-white " />
           </div>
           <p className="text-2xl font-bold">45.5k</p>
-          <p className="text-gray-600">Customer satisfaction rate</p>
+          <p className="">Customer satisfaction rate</p>
         </div>
         <div className="p-6 border cursor-pointer transition hover:bg-red-600 hover:text-white h-52 rounded-lg flex flex-col justify-center  items-center">
           <div className="w-16 h-16 mx-auto flex items-center justify-center bg-black border-8  border-bg-gray-400  rounded-full">
             <Store size={32} className="text-white " />
           </div>
           <p className="text-2xl font-bold">25k</p>
-          <p className="text-gray-600">A trusted store for all</p>
+          <p className="">A trusted store for all</p>
         </div>
       </div>
 
-      {/* Team Section */}
+      {/* Team Section with Swiper */}
       <div className="mt-40 text-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Mapping through an array of team members */}
-          {["Tom Cruise", "Emma Watson", "Will Smith"].map((name, index) => (
-            <div key={index} className="p-6 border rounded-lg shadow-md">
-              <Image
-                src={`/team-${index + 1}.jpg`}
-                width={150}
-                height={150}
-                alt={name}
-                className="mx-auto rounded-full"
-              />
-              <h3 className="mt-4 text-lg font-bold">{name}</h3>
-              <p className="text-gray-600">Managing Director</p>
-            </div>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {teamMembers.map((member, index) => (
+            <SwiperSlide key={index}>
+              <div className="p-6 border rounded-lg shadow-md">
+                <Image
+                  src={member.image}
+                  width={150}
+                  height={150}
+                  alt={member.name}
+                  className="mx-auto rounded-full"
+                />
+                <h3 className="mt-4 text-lg font-bold">{member.name}</h3>
+                <p className="text-gray-600">{member.role}</p>
+                <p className="flex items-center justify-center gap-2 text-gray-600 mt-2">
+                  <Phone size={16} /> {member.phone}
+                </p>
+                <p className="flex items-center justify-center gap-2 text-gray-600 mt-1">
+                  <Mail size={16} /> {member.email}
+                </p>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
 
-      {/* Features Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-40 text-center">
         {/* Feature: Free and Fast Delivery */}
         <div>
