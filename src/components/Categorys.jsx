@@ -55,14 +55,6 @@ const Categorys = () => {
       icon: <GrGamepad size={40} />,
       title: "Gaming",
     },
-    {
-      id: 7,
-      icon: "S-Series Comfort Chair",
-    },
-    {
-      id: 8,
-      icon: "S-Series Comfort Chair",
-    },
   ];
 
   useEffect(() => {
@@ -79,13 +71,13 @@ const Categorys = () => {
       {/* Custom Navigation Buttons */}
       <button
         ref={prevRef}
-        className="absolute -top-6 right-32 z-10 transform -translate-y-1/2 btn-outline p-2 rounded-full shadow-lg"
+        className="absolute -top-6 right-32 z-10 transform -translate-y-1/2 btn-outline p-2 rounded-full shadow-lg hidden md:block"
       >
         <ChevronLeft size={24} />
       </button>
       <button
         ref={nextRef}
-        className="absolute -top-6 right-20 z-10 transform -translate-y-1/2 btn-outline  p-2 rounded-full shadow-lg"
+        className="absolute -top-6 right-20 z-10 transform -translate-y-1/2 btn-outline  p-2 rounded-full shadow-lg hidden md:block"
       >
         <ChevronRight size={24} />
       </button>
@@ -94,7 +86,11 @@ const Categorys = () => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={10}
-        slidesPerView={6}
+        breakpoints={{
+          320: { slidesPerView: 2 },
+          640: { slidesPerView: 3 },
+          1024: { slidesPerView: 6 },
+        }}
         onSwiper={(swiper) => setSwiperInstance(swiper)}
       >
         {products.map((product) => (
@@ -102,10 +98,10 @@ const Categorys = () => {
             key={product.id}
             className="p-4 bg-white rounded-lg shadow-md"
           >
-            <div className="border btn w-40 btn-outline hover:bg-red-500 border-gray-300  hover:border-red-500 h-40 mx-auto flex justify-center items-center rounded-md">
-              <div className="">
+            <div className="border btn w-full md:w-40 btn-outline hover:bg-red-500 border-gray-300 hover:border-red-500 h-40 mx-auto flex justify-center items-center rounded-md">
+              <div>
                 <button>{product.icon}</button>
-                <h1>{product.title}</h1>
+                <h1 className="text-center md:text-left">{product.title}</h1>
               </div>
             </div>
           </SwiperSlide>

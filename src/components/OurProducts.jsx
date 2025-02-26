@@ -75,21 +75,22 @@ export default function OurProducts() {
     },
   ];
   return (
-    <div className="grid grid-cols-5 gap-5 mt-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-10">
       {products?.map((product) => (
         <div
           key={product.id}
-          className={`relative card bg-base-100 w-[100%] shadow-xl `}
+          className={`relative card bg-base-100 w-full shadow-xl`}
         >
           <figure>
             <img
               src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
               alt="Shoes"
+              className="w-full h-48 object-cover"
             />
           </figure>
-          <div className="absolute px-2 flex items-center  text-red-600 rounded-md shadow-lg top-3 left-3 bg-white">
+          <div className="absolute px-2 flex items-center text-red-600 rounded-md shadow-lg top-3 left-3 bg-white">
             <h1 className="font-bold">-40%</h1>
-            <h1 className="">
+            <h1>
               <CiShoppingTag size={20} />
             </h1>
           </div>
@@ -101,13 +102,13 @@ export default function OurProducts() {
               <HiOutlineEye size={16} />
             </button>
           </div>
-          <div className="p-[16px] flex-grow-0">
-            <h2 className="card-title">i Phone 16 proMax</h2>
+          <div className="p-4 flex-grow-0">
+            <h2 className="card-title text-lg sm:text-xl">{product.title}</h2>
             <div className="flex gap-2">
-              <p className="text-red-600 font-bold">$1000</p>
-              <p className="text-red-600 line-through">$1000</p>
+              <p className="text-red-600 font-bold">{product.price}</p>
+              <p className="text-red-600 line-through">{product.price}</p>
             </div>
-            <div className="flex items-center  mt-4  gap-3">
+            <div className="flex items-center mt-4 gap-3">
               <div className="rating rating-sm">
                 <input
                   type="radio"

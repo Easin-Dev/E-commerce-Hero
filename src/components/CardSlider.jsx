@@ -60,17 +60,17 @@ const CardSlider = () => {
   }, [swiperInstance]);
 
   return (
-    <div className="relative mt-5">
+    <div className="relative mt-5 px-4 md:px-8">
       {/* Custom Navigation Buttons */}
       <button
         ref={prevRef}
-        className="absolute -top-6 right-32 z-10 transform -translate-y-1/2 btn-outline p-2 rounded-full shadow-lg"
+        className="absolute -top-6 right-32 z-10 transform -translate-y-1/2 p-2 rounded-full shadow-lg hidden md:block"
       >
         <ChevronLeft size={24} />
       </button>
       <button
         ref={nextRef}
-        className="absolute -top-6 right-20 z-10 transform -translate-y-1/2 btn-outline  p-2 rounded-full shadow-lg"
+        className="absolute -top-6 right-20 z-10 transform -translate-y-1/2 p-2 rounded-full shadow-lg hidden md:block"
       >
         <ChevronRight size={24} />
       </button>
@@ -79,7 +79,11 @@ const CardSlider = () => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={20}
-        slidesPerView={3}
+        breakpoints={{
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
         onSwiper={(swiper) => setSwiperInstance(swiper)}
       >
         {products.map((product) => (
@@ -88,19 +92,18 @@ const CardSlider = () => {
             className="p-4 bg-white rounded-lg shadow-md"
           >
             <div
-              className={`relative card bg-base-100 w-96 shadow-xl ${ubuntu.className}`}
+              className={`relative card bg-base-100 shadow-xl ${ubuntu.className}`}
             >
               <figure>
                 <img
                   src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                   alt="Shoes"
+                  className="w-full object-cover"
                 />
               </figure>
-              <div className="absolute px-2 flex items-center  text-red-600 rounded-md shadow-lg top-3 left-3 bg-white">
+              <div className="absolute px-2 flex items-center text-red-600 rounded-md shadow-lg top-3 left-3 bg-white">
                 <h1 className="font-bold">-40%</h1>
-                <h1 className="">
-                  <CiShoppingTag size={20} />
-                </h1>
+                <CiShoppingTag size={20} />
               </div>
               <div className="absolute flex flex-col gap-3 right-3 top-3">
                 <button className="btn btn-circle btn-sm border-0">
@@ -110,38 +113,40 @@ const CardSlider = () => {
                   <HiOutlineEye size={16} />
                 </button>
               </div>
-              <div className="p-[16px] flex-grow-0">
-                <h2 className="card-title">i Phone 16 proMax</h2>
+              <div className="p-4">
+                <h2 className="card-title text-lg font-bold">
+                  {product.title}
+                </h2>
                 <div className="flex gap-2">
-                  <p className="text-red-600 font-bold">$1000</p>
+                  <p className="text-red-600 font-bold">{product.price}</p>
                   <p className="text-red-600 line-through">$1000</p>
                 </div>
-                <div className="flex items-center  mt-4  gap-3">
+                <div className="flex items-center mt-4 gap-3">
                   <div className="rating rating-sm">
                     <input
                       type="radio"
-                      name="rating-6"
+                      name={`rating-${product.id}`}
                       className="mask mask-star-2 bg-orange-400"
                     />
                     <input
                       type="radio"
-                      name="rating-6"
+                      name={`rating-${product.id}`}
                       className="mask mask-star-2 bg-orange-400"
                       defaultChecked
                     />
                     <input
                       type="radio"
-                      name="rating-6"
+                      name={`rating-${product.id}`}
                       className="mask mask-star-2 bg-orange-400"
                     />
                     <input
                       type="radio"
-                      name="rating-6"
+                      name={`rating-${product.id}`}
                       className="mask mask-star-2 bg-orange-400"
                     />
                     <input
                       type="radio"
-                      name="rating-6"
+                      name={`rating-${product.id}`}
                       className="mask mask-star-2 bg-orange-400"
                     />
                   </div>
@@ -151,7 +156,7 @@ const CardSlider = () => {
                   <button className="btn btn-sm bg-black text-white hover:text-black hover:bg-red-500">
                     Buy Now <HiOutlineShoppingBag />
                   </button>
-                  <button className="btn btn-sm border-red-500 btn-outline ">
+                  <button className="btn btn-sm border-red-500 btn-outline">
                     Add <MdAddShoppingCart />
                   </button>
                 </div>

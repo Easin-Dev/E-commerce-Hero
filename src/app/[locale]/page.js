@@ -39,7 +39,7 @@ export default function Home() {
         {/* categorys */}
         <div className="mt-20">
           <Category categoryText={"categorys"} />
-          <h1 className="text-5xl font-bold text-black mt-2">
+          <h1 className="lg:text-5xl md:text-4xl sm:text-3xl font-bold text-black mt-2">
             Browse By Category
           </h1>
           <Categorys />
@@ -49,7 +49,7 @@ export default function Home() {
         {/* best selling products */}
         <div className="mt-20">
           <Category categoryText={"This month"} />
-          <h1 className="text-5xl font-bold text-black mt-2">
+          <h1 className="lg:text-5xl md:text-4xl sm:text-3xl font-bold text-black mt-2">
             Best Selling Products
           </h1>
           <CardSlider />
@@ -61,7 +61,7 @@ export default function Home() {
 
         {/* our products */}
         <Category categoryText={"our products"} />
-        <h1 className="text-5xl font-bold text-black mt-2">
+        <h1 className="lg:text-5xl md:text-4xl sm:text-3xl font-bold text-black mt-2">
           Explore Our products
         </h1>
         <OurProducts />
@@ -69,7 +69,9 @@ export default function Home() {
 
         {/* New Arrival */}
         <Category categoryText={"Featured"} />
-        <h1 className="text-5xl font-bold text-black mt-2">New Arrival</h1>
+        <h1 className="lg:text-5xl md:text-4xl sm:text-3xl font-bold text-black mt-2">
+          New Arrival
+        </h1>
         <Featured />
 
         {/* services sections */}
