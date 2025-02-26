@@ -1,28 +1,28 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { ChevronRight, X } from "lucide-react";
 import BannerSlider from "./BannerSlider";
 
 export default function Banner() {
   const [open, setOpen] = useState(false);
   const [newOpen, setNewOpen] = useState(false);
+
   return (
-    <div className="grid grid-cols-5 gap-10 mt-3">
+    <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mt-3">
       {/* Accordion */}
-      <div className=" col-span-1 p-2  border">
-        <div className="relative">
+      <div className="col-span-1 p-2 border">
+        <div className="relative z-10">
           {/* 🔹 Trigger Button */}
           <div
             onClick={() => setOpen(!open)}
-            className="flex hover:text-blue-500 items-center px-4 py-2  hover:bg-gray-200 rounded-md"
+            className="flex hover:text-blue-500 items-center px-4 py-2 hover:bg-gray-200 rounded-md"
           >
-            Categories <ChevronRight className="ml-28 w-4 h-4" />
+            Categories <ChevronRight className="ml-auto w-4 h-4" />
           </div>
 
           {/* 🔹 Dropdown Menu */}
           {open && (
-            <div className="absolute top-0 left-[250px] mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-50">
+            <div className="absolute top-0 left-0 mt-2 w-full md:w-64 bg-white shadow-lg rounded-lg p-4 z-20 md:left-full">
               <div className="flex justify-between items-center border-b pb-2 mb-2">
                 <h3 className="font-semibold text-lg">Shop by Category</h3>
                 <button onClick={() => setOpen(false)}>
@@ -58,18 +58,18 @@ export default function Banner() {
             </div>
           )}
         </div>
-        <div className="relative">
+        <div className="relative z-10">
           {/* 🔹 Trigger Button */}
           <div
             onClick={() => setNewOpen(!newOpen)}
-            className="flex hover:text-blue-500 items-center px-4 py-2  hover:bg-gray-200 rounded-md"
+            className="flex hover:text-blue-500 items-center px-4 py-2 hover:bg-gray-200 rounded-md"
           >
-            Categories <ChevronRight className="ml-28 w-4 h-4" />
+            Categories <ChevronRight className="ml-auto w-4 h-4" />
           </div>
 
           {/* 🔹 Dropdown Menu */}
           {newOpen && (
-            <div className="absolute top-0 left-[250px] mt-2 w-64 bg-white shadow-lg rounded-lg p-4 z-50">
+            <div className="absolute top-0 left-0 mt-2 w-full md:w-64 bg-white shadow-lg rounded-lg p-4 z-20 md:left-full">
               <div className="flex justify-between items-center border-b pb-2 mb-2">
                 <h3 className="font-semibold text-lg">Shop by Category</h3>
                 <button onClick={() => setNewOpen(false)}>
@@ -106,29 +106,29 @@ export default function Banner() {
           )}
         </div>
         <div>
-          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2  hover:bg-gray-200 rounded-md">
+          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2 hover:bg-gray-200 rounded-md">
             Electronics
           </button>
-          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2  hover:bg-gray-200 rounded-md">
+          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2 hover:bg-gray-200 rounded-md">
             Medicine
           </button>
-          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2  hover:bg-gray-200 rounded-md">
+          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2 hover:bg-gray-200 rounded-md">
             Sports & Outdoor
           </button>
-          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2  hover:bg-gray-200 rounded-md">
+          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2 hover:bg-gray-200 rounded-md">
             Baby’s & Toys
           </button>
-          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2  hover:bg-gray-200 rounded-md">
+          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2 hover:bg-gray-200 rounded-md">
             Groceries & Pets
           </button>
-          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2  hover:bg-gray-200 rounded-md">
+          <button className="flex hover:text-blue-500 items-center w-full px-4 py-2 hover:bg-gray-200 rounded-md">
             Health & Beauty
           </button>
         </div>
       </div>
 
       {/* Banner */}
-      <div className=" col-span-4 ">
+      <div className="col-span-1 md:col-span-4">
         <BannerSlider />
       </div>
     </div>

@@ -19,7 +19,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="drawer drawer-mobile">
+    <div className="drawer drawer-mobile z-50">
       <input
         id="my-drawer"
         type="checkbox"
@@ -59,7 +59,7 @@ export default function Navbar() {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-2/3 h-full bg-base-100">
+        <ul className="menu p-4 w-2/3 h-screen bg-base-100">
           <li className="flex justify-end">
             <button
               onClick={() => setMenuOpen(false)}
